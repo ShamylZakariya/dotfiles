@@ -1,0 +1,72 @@
+{
+	"name": "xcode-vscode-theme",
+	"displayName": "Xcode Syntax Themes",
+	"description": "Xcode Syntax Themes (VSCode Default UI)",
+	"version": "1.0.3",
+	"publisher": "Nataniel4",
+	"engines": {
+		"vscode": "^1.25.0"
+	},
+	"keywords": [
+		"color-theme",
+		"macos",
+		"xcode",
+		"catalina",
+		"vscode",
+		"syntax",
+		"default"
+	],
+	"preview": false,
+	"homepage": "https://github.com/Nataniel4/xcode-vscode-theme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Nataniel4/xcode-vscode-theme.git"
+	},
+	"icon": "images/icon.png",
+	"galleryBanner": {
+		"color": "#0F0F0F",
+		"theme": "dark"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Xcode Syntax Default Light",
+				"uiTheme": "vs",
+				"path": "./themes/color/light/xcode-vscode-default.json"
+			},
+			{
+				"label": "Xcode Syntax Default Light (Low Key)",
+				"uiTheme": "vs",
+				"path": "./themes/color/light/xcode-vscode-low-key.json"
+			},
+			{
+				"label": "Xcode Syntax Civic",
+				"uiTheme": "vs-dark",
+				"path": "./themes/color/dark/xcode-vscode-civic.json"
+			},
+			{
+				"label": "Xcode Syntax Dark (Catalina)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/color/dark/xcode-vscode-catalina.json"
+			},
+			{
+				"label": "Xcode Syntax Dark Bold (Catalina)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/color/dark/xcode-vscode-catalina-bold.json"
+			},
+			{
+				"label": "Xcode Syntax Default Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/color/dark/xcode-vscode-default-dark.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "ce395d04-fce2-469c-b57f-960c2794fdcb",
+		"publisherId": "2d430c25-a916-427f-9f6d-55c8d2ad045c",
+		"publisherDisplayName": "Nataniel López"
+	}
+}

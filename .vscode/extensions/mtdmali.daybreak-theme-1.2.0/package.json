@@ -1,0 +1,51 @@
+{
+	"name": "daybreak-theme",
+	"author": "Mike Mali <michaeltdmali@gmail.com> (http://twitter.com/mtdmali)",
+	"version": "1.2.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mtdmali/daybreak-theme"
+	},
+	"license": "MIT",
+	"publisher": "mtdmali",
+	"displayName": "Daybreak",
+	"description": "A VS Code theme for those who work through the night.",
+	"icon": "logo.png",
+	"engines": {
+		"vscode": "^1.36.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Daybreak",
+				"uiTheme": "vs-dark",
+				"path": "./themes/daybreak-color-theme.json"
+			},
+			{
+				"label": "Daybreak (Italic)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/daybreak-color-theme-italic.json"
+			},
+			{
+				"label": "Daybreak (Bold)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/daybreak-color-theme-bold.json"
+			}
+		],
+		"iconThemes": [
+			{
+				"id": "Daybreak",
+				"label": "Daybreak",
+				"path": "./icons/daybreak-icon-theme.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "92a406ed-c6eb-4fa4-a82a-3c91ee673f77",
+		"publisherId": "16d6623c-b71e-4e97-9f99-4aa1fb880afb",
+		"publisherDisplayName": "mtdmali"
+	}
+}

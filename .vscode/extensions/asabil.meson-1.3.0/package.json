@@ -1,0 +1,192 @@
+{
+	"name": "meson",
+	"displayName": "Meson",
+	"description": "Meson language support for Visual Studio Code",
+	"icon": "graphics/icon.png",
+	"version": "1.3.0",
+	"license": "Apache-2.0",
+	"publisher": "asabil",
+	"author": {
+		"name": "Ali Sabil"
+	},
+	"contributors": [
+		"Nathan Graule <solarliner@gmail.com> (https://solarliner.me)"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/asabil/vscode-meson.git"
+	},
+	"bugs": {
+		"url": "https://github.com/asabil/vscode-meson/issues"
+	},
+	"homepage": "https://github.com/asabil/vscode-meson/blob/master/README.md",
+	"engines": {
+		"vscode": "^1.26.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"activationEvents": [
+		"onLanguage:meson",
+		"onCommand:mesonbuild.configure",
+		"onCommand:mesonbuild.build",
+		"onCommand:mesonbuild.test",
+		"workspaceContains:meson.build"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "mesonbuild.configure",
+				"title": "Meson: Configure"
+			},
+			{
+				"command": "mesonbuild.reconfigure",
+				"title": "Meson: Reconfigure"
+			},
+			{
+				"command": "mesonbuild.clean",
+				"title": "Meson: Clean"
+			},
+			{
+				"command": "mesonbuild.build",
+				"title": "Meson: Build"
+			},
+			{
+				"command": "mesonbuild.test",
+				"title": "Meson: Run Unit Tests"
+			}
+		],
+		"configuration": {
+			"title": "Meson build configuration",
+			"properties": {
+				"mesonbuild.configureOnOpen": {
+					"type": "boolean",
+					"default": false,
+					"description": "Have VS Code run meson configure/ninja reconfigure on folder open."
+				},
+				"mesonbuild.buildFolder": {
+					"type": "string",
+					"default": "builddir",
+					"description": "Specify in which folder Meson build configure and build the project."
+				},
+				"mesonbuild.configureOptions": {
+					"type": "array",
+					"default": [
+						"--buildtype=debug"
+					],
+					"description": "Specify the list of configuration options used for Meson configuration."
+				}
+			}
+		},
+		"taskDefinitions": [
+			{
+				"type": "meson",
+				"required": [
+					"mode"
+				],
+				"properties": {
+					"target": {
+						"type": "string",
+						"description": "The Meson target to... target",
+						"default": "all",
+						"dependencies": {
+							"mode": {
+								"enum": [
+									"build",
+									"test"
+								]
+							}
+						}
+					},
+					"filename": {
+						"type": "string",
+						"description": "Filename to run as part of the target",
+						"dependencies": {
+							"mode": {
+								"enum": [
+									"run"
+								]
+							}
+						}
+					},
+					"mode": {
+						"type": "string",
+						"description": "Specify the kind of task to perform",
+						"enum": [
+							"build",
+							"run",
+							"test",
+							"reconfigure",
+							"clean"
+						],
+						"default": "build"
+					}
+				}
+			}
+		],
+		"languages": [
+			{
+				"id": "meson",
+				"aliases": [
+					"Meson",
+					"meson",
+					"mesonbuild"
+				],
+				"filenames": [
+					"meson.build",
+					"meson_options.txt"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "meson",
+				"scopeName": "source.meson",
+				"path": "./syntaxes/meson.tmLanguage.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "meson",
+				"path": "./snippets/meson.json"
+			}
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "meson-sidebar",
+					"title": "Meson",
+					"icon": "res/meson_32.svg"
+				}
+			]
+		},
+		"views": {
+			"meson-sidebar": [
+				{
+					"id": "meson-project",
+					"name": "Current project"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/node": "^12.0.2",
+		"typescript": "^2.4.1",
+		"vscode": "^1.1.34"
+	},
+	"dependencies": {
+		"array-flat-polyfill": "^1.0.1"
+	},
+	"__metadata": {
+		"id": "9ee4ee1d-669d-4a42-8095-51a61caef557",
+		"publisherId": "62655ada-af5f-4460-ab84-20e7ae2b6220",
+		"publisherDisplayName": "Ali Sabil"
+	}
+}

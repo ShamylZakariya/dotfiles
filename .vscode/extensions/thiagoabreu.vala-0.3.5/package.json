@@ -1,0 +1,128 @@
+{
+	"name": "vala",
+	"displayName": "Vala Code",
+	"description": "Vala Language Colorization for Visual Studio Code",
+	"version": "0.3.5",
+	"publisher": "thiagoabreu",
+	"author": {
+		"name": "Thiago 'Jedi' Abreu",
+		"email": "thiagoa7@gmail.com",
+		"url": "http://thiagoabreu.github.io/"
+	},
+	"contributors": [
+		{
+			"name": "Laurent Tréguier",
+			"url": "https://github.com/LaurentTreguier"
+		},
+		{
+			"name": "David Lechner",
+			"url": "https://github.com/dlech"
+		},
+		{
+			"name": "Helder Bertoldo ",
+			"url": "https://github.com/btd1337"
+		}
+	],
+	"license": "MIT",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"galleryBanner": {
+		"color": "#403757",
+		"theme": "dark"
+	},
+	"icon": "images/vala.png",
+	"badges": [
+		{
+			"url": "https://img.shields.io/github/contributors/thiagoabreu/vala-code.svg",
+			"href": "https://github.com/thiagoabreu/vala-code/graphs/contributors",
+			"description": "Awesome people!"
+		}
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/thiagoabreu/vala-code.git"
+	},
+	"categories": [
+		"Programming Languages",
+		"Snippets"
+	],
+	"main": "./out/main.js",
+	"activationEvents": [
+		"onLanguage:vala"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "vala",
+				"aliases": [
+					"Vala",
+					"vala"
+				],
+				"extensions": [
+					".vala",
+					".vapi"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "vala",
+				"scopeName": "source.vala",
+				"path": "./syntaxes/vala.tmLanguage"
+			}
+		],
+		"snippets": [
+			{
+				"language": "vala",
+				"path": "./snippets/snippets.json"
+			}
+		],
+		"problemPatterns": [
+			{
+				"name": "valac",
+				"regexp": "^(.*?):(\\d+)[:\\.](\\d+)(?:-(\\d+)\\.(\\d+))?:\\s+(warning|error):\\s+(.*)$",
+				"file": 1,
+				"line": 2,
+				"column": 3,
+				"endLine": 4,
+				"endColumn": 5,
+				"severity": 6,
+				"message": 7
+			}
+		],
+		"problemMatchers": [
+			{
+				"name": "valac",
+				"owner": "vala",
+				"fileLocation": "absolute",
+				"pattern": "$valac"
+			}
+		],
+		"breakpoints": [
+			{
+				"language": "vala"
+			}
+		]
+	},
+	"dependencies": {
+		"vscode-languageclient": "3.2.0"
+	},
+	"devDependencies": {
+		"typescript": "^2.5.3",
+		"vscode": "^1.1.5",
+		"@types/node": "^7.0.43"
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"__metadata": {
+		"id": "cdbd93a0-f305-4597-8f95-0533aed740b8",
+		"publisherId": "c4cbdfb1-c35f-43b9-bdb3-3266563a18f9",
+		"publisherDisplayName": "Thiago Jedi Abreu"
+	}
+}

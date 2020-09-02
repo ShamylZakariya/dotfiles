@@ -1,0 +1,6 @@
+export PATH=$PATH:~/.local/bin:/snap/bin:~/Code/SDKs/flutter/bin:~/Android/Sdk/platform-tools:~/.cargo/bin
+alias open='gio open'
+alias xclip='xclip -selection c'
+alias serve='python3 -m http.server 8080'
+alias ll="ls -lhFA"
+alias ssh_sisyphus="ssh pi@sisyphus"

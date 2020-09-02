@@ -1,0 +1,74 @@
+{
+	"name": "shaderlabformatter",
+	"displayName": "ShaderLabFormatter",
+	"description": "An VSCode plugin for formatting of Unity ShaderLab",
+	"version": "0.4.0",
+	"engines": {
+		"vscode": "^1.32.0"
+	},
+	"author": {
+		"name": "LiteFeel"
+	},
+	"publisher": "litefeel",
+	"homepage": "https://github.com/litefeel/ShaderLabFormatter",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/litefeel/ShaderLabFormatter.git"
+	},
+	"bugs": "https://github.com/litefeel/ShaderLabFormatter/issues",
+	"categories": [
+		"Formatters",
+		"Other",
+		"Programming Languages"
+	],
+	"keywords": [
+		"formatter",
+		"shaderlab",
+		"unity"
+	],
+	"icon": "images/icon.png",
+	"activationEvents": [
+		"onLanguage:shaderlab"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "ShaderLab Formatter",
+			"properties": {
+				"shaderlabformatter.indentation.conditionMacro": {
+					"enum": [
+						"dont",
+						"indent",
+						"normal"
+					],
+					"type": "string",
+					"default": "indent",
+					"description": "indentation for condition macro."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.34",
+		"tslint": "^5.12.1",
+		"@types/node": "^10.12.21",
+		"@types/mocha": "^2.2.42"
+	},
+	"dependencies": {
+		"gulp": "^4.0.2"
+	},
+	"__metadata": {
+		"id": "95f2f6b4-c182-43d6-b17a-31ba2eda0dd5",
+		"publisherId": "53c46b2e-530e-443c-8fbb-55902983cbb9",
+		"publisherDisplayName": "LiteFeel"
+	}
+}
